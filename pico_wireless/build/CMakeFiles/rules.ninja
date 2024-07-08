@@ -81,7 +81,7 @@ rule ASM_EXECUTABLE_LINKER__bs2_default_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Users/jin/.pico-sdk/cmake/v3.28.6/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/jin/Downloads/pico_wireless -B/Users/jin/Downloads/pico_wireless/build
+  command = /Users/jin/.pico-sdk/cmake/v3.28.6/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/jin/Desktop/my-ECU-wireless/pico_wireless -B/Users/jin/Desktop/my-ECU-wireless/pico_wireless/build
   description = Re-running CMake...
   generator = 1
 

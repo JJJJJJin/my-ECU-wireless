@@ -20,6 +20,25 @@
 // Configuration register
 #define CONFIG = 0x00
 
+// RX mode register
+#define NRF24L01_READ_REGISTER 0x00
+#define NRF24L01_WRITE_REGISTER 0x20
+#define NRF24L01_R_RX_PAYLOAD 0x61
+#define NRF24L01_W_TX_PAYLOAD 0xA0
+#define NRF24L01_FLUSH_TX 0xE1
+#define NRF24L01_FLUSH_RX 0xE2
+#define NRF24L01_REUSE_TX_PL 0xE3
+#define NRF24L01_NOP 0xFF
+
+// TX mode register
+#define NRF24L01_READ_REGISTER 0x00
+#define NRF24L01_WRITE_REGISTER 0x20
+#define NRF24L01_R_RX_PAYLOAD 0x61
+#define NRF24L01_W_TX_PAYLOAD 0xA0
+#define NRF24L01_FLUSH_TX 0xE1
+#define NRF24L01_FLUSH_RX 0xE2
+#define NRF24L01_REUSE_TX_PL 0xE3
+#define NRF24L01_NOP 0xFF
 
 #define NRF24L01_CE_PIN 17
 #define NRF24L01_CSN_PIN 18
@@ -62,6 +81,51 @@ uint8_t nrf24l01_read_register(uint8_t reg) {
     gpio_put(NRF24L01_CSN_PIN, 1); // Pull CSN high
 
     return data[0];
+}
+
+// TX mode set up
+void nrf24l01_write_payload(uint8_t* data, uint8_t length) {
+    gpio_put(NRF24L01_CSN_PIN, 0); // Pull CSN low
+    uint8_t cmd = NRF24L01_W_TX_PAYLOAD;
+    spi_write_blocking(spi0, &cmd, 1); // Send W_TX_PAYLOAD command
+    spi_write_blocking(spi0, data, length); // Write payload
+    gpio_put(NRF24L01_CSN_PIN, 1); // Pull CSN high
+}
+
+void nrf24l01_config_tx_mode() {
+    // Set CE low to enter standby mode
+    gpio_put(NRF24L01_CE_PIN, 0);
+
+    // Power up and configure for PTX mode
+    nrf24l01_write_register(0x00, 0x0A); // CONFIG register: PWR_UP=1, PRIM_RX=0
+    nrf24l01_write_register(0x01, 0x3F); // Enable Auto Acknowledgment on all pipes
+    nrf24l01_write_register(0x02, 0x03); // Enable RX addresses on pipe 0 and 1
+    nrf24l01_write_register(0x04, 0x04); // Set retransmission delay and count
+    nrf24l01_write_register(0x06, 0x0F); // RF_SETUP register: Set data rate and power
+}
+
+// RX mode set up
+void nrf24l01_read_payload(uint8_t* data, uint8_t length) {
+    gpio_put(NRF24L01_CSN_PIN, 0); // Pull CSN low
+    uint8_t cmd = NRF24L01_R_RX_PAYLOAD;
+    spi_write_blocking(spi0, &cmd, 1); // Send R_RX_PAYLOAD command
+    spi_read_blocking(spi0, NRF24L01_NOP, data, length); // Read payload
+    gpio_put(NRF24L01_CSN_PIN, 1); // Pull CSN high
+}
+
+void nrf24l01_config_rx_mode() {
+    // Set CE low to enter standby mode
+    gpio_put(NRF24L01_CE_PIN, 0);
+
+    // Power up and configure for PRX mode
+    nrf24l01_write_register(0x00, 0x0B); // CONFIG register: PWR_UP=1, PRIM_RX=1
+    nrf24l01_write_register(0x01, 0x3F); // Enable Auto Acknowledgment on all pipes
+    nrf24l01_write_register(0x02, 0x03); // Enable RX addresses on pipe 0 and 1
+    nrf24l01_write_register(0x04, 0x04); // Set retransmission delay and count
+    nrf24l01_write_register(0x06, 0x0F); // RF_SETUP register: Set data rate and power
+
+    // Set CE high to enter RX mode
+    gpio_put(NRF24L01_CE_PIN, 1);
 }
 
 

@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/jin/Downloads/pico_wireless/build/pico-sdk/src/rp2040/hardware_regs/cmake_install.cmake")
-  include("/Users/jin/Downloads/pico_wireless/build/pico-sdk/src/rp2040/hardware_structs/cmake_install.cmake")
+  include("/Users/jin/Desktop/my-ECU-wireless/pico_wireless/build/pico-sdk/src/rp2040/hardware_regs/cmake_install.cmake")
+  include("/Users/jin/Desktop/my-ECU-wireless/pico_wireless/build/pico-sdk/src/rp2040/hardware_structs/cmake_install.cmake")
 
 endif()
 
