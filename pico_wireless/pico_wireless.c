@@ -11,23 +11,63 @@
 #define PIN_SCK  18
 #define PIN_MOSI 19
 
+// Read register [000] + [5 bit register address]
+#define R_REGISTER = 0x00
+// Write register [001] + [5 bit register address]
+#define W_REGISTER = 0x20
+// No Operation
+#define NOP = 0xFF 
+// Configuration register
+#define CONFIG = 0x00
+
+
+#define NRF24L01_CE_PIN 17
+#define NRF24L01_CSN_PIN 18
+
+void nrf24l01_init() {
+    // Initialize SPI interface
+    spi_init(spi0, 500 * 1000); // 500kHz
+    gpio_set_function(19, GPIO_FUNC_SPI); // SCK
+    gpio_set_function(20, GPIO_FUNC_SPI); // MOSI
+    gpio_set_function(21, GPIO_FUNC_SPI); // MISO
+
+    // Initialize CE and CSN pins
+    gpio_init(NRF24L01_CE_PIN);
+    gpio_set_dir(NRF24L01_CE_PIN, GPIO_OUT);
+
+    gpio_init(NRF24L01_CSN_PIN);
+    gpio_set_dir(NRF24L01_CSN_PIN, GPIO_OUT);
+
+    // Set CSN high to start with
+    gpio_put(NRF24L01_CSN_PIN, 1);
+}
+
+void nrf24l01_write_register(uint8_t reg, uint8_t value) {
+    uint8_t data[2];
+    data[0] = reg | 0x20; // Set the R/W bit high for write operations
+    data[1] = value;
+
+    gpio_put(NRF24L01_CSN_PIN, 0); // Pull CSN low
+    spi_write_blocking(spi0, data, 2); // Write data
+    gpio_put(NRF24L01_CSN_PIN, 1); // Pull CSN high
+}
+
+uint8_t nrf24l01_read_register(uint8_t reg) {
+    uint8_t data[2];
+    data[0] = reg & 0x1F; // Set the R/W bit low for read operations
+
+    gpio_put(NRF24L01_CSN_PIN, 0); // Pull CSN low
+    spi_write_blocking(spi0, data, 1); // Send register address
+    spi_read_blocking(spi0, 0, data, 1); // Read register value
+    gpio_put(NRF24L01_CSN_PIN, 1); // Pull CSN high
+
+    return data[0];
+}
 
 
 int main()
 {
-    stdio_init_all();
-
-    // SPI initialisation. This example will use SPI at 1MHz.
-    spi_init(SPI_PORT, 1000*1000);
-    gpio_set_function(PIN_MISO, GPIO_FUNC_SPI);
-    gpio_set_function(PIN_CS,   GPIO_FUNC_SIO);
-    gpio_set_function(PIN_SCK,  GPIO_FUNC_SPI);
-    gpio_set_function(PIN_MOSI, GPIO_FUNC_SPI);
-    
-    // Chip select is active-low, so we'll initialise it to a driven-high state
-    gpio_set_dir(PIN_CS, GPIO_OUT);
-    gpio_put(PIN_CS, 1);
-    // For more examples of SPI use see https://github.com/raspberrypi/pico-examples/tree/master/spi
+    nrf24l01_init();
 
     while (true) {
         printf("Hello, world!\n");
