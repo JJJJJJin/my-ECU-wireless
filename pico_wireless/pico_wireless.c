@@ -7,9 +7,11 @@
 // Pins can be changed, see the GPIO function select table in the datasheet for information on GPIO assignments
 #define SPI_PORT spi0
 #define PIN_MISO 16
-#define PIN_CS   17
-#define PIN_SCK  18
+#define NRF24L01_CE_PIN 17
+#define NRF24L01_CSN_PIN 18
 #define PIN_MOSI 19
+#define NRF24L01_IRQ_PIN 20
+
 
 // Read register [000] + [5 bit register address]
 #define R_REGISTER = 0x00
@@ -39,9 +41,6 @@
 #define NRF24L01_FLUSH_RX 0xE2
 #define NRF24L01_REUSE_TX_PL 0xE3
 #define NRF24L01_NOP 0xFF
-
-#define NRF24L01_CE_PIN 17
-#define NRF24L01_CSN_PIN 18
 
 void nrf24l01_init() {
     // Initialize SPI interface
@@ -131,10 +130,52 @@ void nrf24l01_config_rx_mode() {
 
 int main()
 {
+    /** Code for RX mode **/
+    stdio_init_all();
     nrf24l01_init();
+    nrf24l01_config_rx_mode();
+
+    uint8_t rx_data[32];
+
+    /** init LED for debugging **/
+    gpio_init(25);
+    gpio_set_dir(25, GPIO_OUT);
 
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        // Wait for IRQ pin to go low, indicating data is ready
+        //if (!gpio_get(NRF24L01_IRQ_PIN)) {
+        if (1) {
+
+            // first LED, saying starting to read
+            gpio_put(25, 1);
+            sleep_ms(2000);
+            gpio_put(25, 0);
+
+            // Read the payload
+            nrf24l01_read_payload(rx_data, 32);
+
+            // Print the received data
+            printf("Received data: ");
+            for (int i = 0; i < 32; i++) {
+                printf("%02X ", rx_data[i]);
+            }
+            printf("\n");
+
+            // Clear the RX_DR bit in the STATUS register by writing 1 to it
+            nrf24l01_write_register(0x07, 0x40);
+
+            // Flush the RX FIFO
+            uint8_t flush_cmd = NRF24L01_FLUSH_RX;
+            gpio_put(NRF24L01_CSN_PIN, 0);
+            spi_write_blocking(spi0, &flush_cmd, 1);
+            gpio_put(NRF24L01_CSN_PIN, 1);
+
+            // second LED, saying ending reading
+            gpio_put(25, 1);
+            sleep_ms(2000);
+            gpio_put(25, 0);
+            sleep_ms(1000);
+        }
+        sleep_ms(100);
     }
 }

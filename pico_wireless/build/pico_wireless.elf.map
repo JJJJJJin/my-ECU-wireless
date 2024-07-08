@@ -86,10 +86,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
- .text.nrf24l01_write_register
-                0x00000000       0x2c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .text.nrf24l01_read_register
                 0x00000000       0x3c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+ .text.nrf24l01_write_payload
+                0x00000000       0x40 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+ .text.nrf24l01_config_tx_mode
+                0x00000000       0x36 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .text          0x00000000        0x0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdlib/stdlib.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdlib/stdlib.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -1239,8 +1241,6 @@ Discarded input sections
                 0x00000000       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_get_until
                 0x00000000       0x64 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .text.__wrap_putchar
-                0x00000000       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.putchar_raw
                 0x00000000       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text._read    0x00000000       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
@@ -1254,8 +1254,6 @@ Discarded input sections
                 0x00000000       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.puts_raw
                 0x00000000       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .text.stdio_init_all
-                0x00000000        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .rodata.__wrap_getchar.str1.4
                 0x00000000       0x4d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_getchar
@@ -1283,19 +1281,15 @@ Discarded input sections
                 0x00000000       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
  .time_critical.spi_write_read_blocking
                 0x00000000       0x42 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
- .time_critical.spi_write_blocking
-                0x00000000       0x3a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
- .time_critical.spi_read_blocking
-                0x00000000       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
  .time_critical.spi_write16_read16_blocking
                 0x00000000       0x42 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
  .time_critical.spi_write16_blocking
                 0x00000000       0x3c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
  .time_critical.spi_read16_blocking
                 0x00000000       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
- .text          0x00000000        0x0 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccV2sIiu.o
- .data          0x00000000        0x0 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccV2sIiu.o
- .bss           0x00000000        0x0 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccV2sIiu.o
+ .text          0x00000000        0x0 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccMmLO6R.o
+ .data          0x00000000        0x0 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccMmLO6R.o
+ .bss           0x00000000        0x0 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccMmLO6R.o
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-calloc.o)
@@ -1614,11 +1608,11 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccV2sIiu.o
+ .boot2         0x10000000      0x100 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccMmLO6R.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x4128
+.text           0x10000100     0x42a0
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1685,419 +1679,434 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  .text.nrf24l01_init
                 0x10000308       0x4c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
                 0x10000308                nrf24l01_init
- .text.main     0x10000354       0x1c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
-                0x10000354                main
+ .text.nrf24l01_write_register
+                0x10000354       0x2c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x10000354                nrf24l01_write_register
+ .text.nrf24l01_read_payload
+                0x10000380       0x44 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x10000380                nrf24l01_read_payload
+ .text.nrf24l01_config_rx_mode
+                0x100003c4       0x38 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x100003c4                nrf24l01_config_rx_mode
+ .text.main     0x100003fc       0xac CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x100003fc                main
  .text.gpio_set_function
-                0x10000370       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000370                gpio_set_function
+                0x100004a8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100004a8                gpio_set_function
  .text.gpio_init
-                0x100003a0       0x16 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x100003a0                gpio_init
- *fill*         0x100003b6        0x2 
+                0x100004d8       0x16 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100004d8                gpio_init
+ *fill*         0x100004ee        0x2 
  .text.running_on_fpga
-                0x100003b8       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
-                0x100003b8                running_on_fpga
+                0x100004f0       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+                0x100004f0                running_on_fpga
  .text.hw_claim_lock
-                0x100003cc       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
-                0x100003cc                hw_claim_lock
+                0x10000504       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000504                hw_claim_lock
  .text.hw_claim_unlock
-                0x100003e4       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
-                0x100003e4                hw_claim_unlock
+                0x1000051c       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+                0x1000051c                hw_claim_unlock
  .text.hw_claim_or_assert
-                0x100003f8       0x32 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
-                0x100003f8                hw_claim_or_assert
- *fill*         0x1000042a        0x2 
+                0x10000530       0x32 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000530                hw_claim_or_assert
+ *fill*         0x10000562        0x2 
  .text.spin_locks_reset
-                0x1000042c       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
-                0x1000042c                spin_locks_reset
+                0x10000564       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000564                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x1000044c       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
-                0x1000044c                next_striped_spin_lock_num
+                0x10000584       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000584                next_striped_spin_lock_num
  .text.set_raw_irq_handler_and_unlock
-                0x10000468       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100005a0       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .text.resolve_branch
-                0x10000490       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100005c8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .text.make_branch
-                0x100004c0       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100005f8       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .text.insert_branch_and_link
-                0x10000508       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000640       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .text.irq_is_enabled
-                0x10000548       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000548                irq_is_enabled
+                0x10000680       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000680                irq_is_enabled
  .text.irq_set_mask_enabled
-                0x10000560       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000560                irq_set_mask_enabled
+                0x10000698       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000698                irq_set_mask_enabled
  .text.irq_set_enabled
-                0x10000580        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000580                irq_set_enabled
- *fill*         0x1000058e        0x2 
+                0x100006b8        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100006b8                irq_set_enabled
+ *fill*         0x100006c6        0x2 
  .text.irq_get_vtable_handler
-                0x10000590       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000590                irq_get_vtable_handler
+                0x100006c8       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100006c8                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x100005a0       0x54 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x100005a0                irq_set_exclusive_handler
+                0x100006d8       0x54 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100006d8                irq_set_exclusive_handler
  .text.irq_remove_handler
-                0x100005f4      0x188 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x100005f4                irq_remove_handler
+                0x1000072c      0x188 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000072c                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x1000077c       0xf0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000077c                irq_add_tail_to_free_list
+                0x100008b4       0xf0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100008b4                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x1000086c       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000086c                irq_init_priorities
+                0x100009a4       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100009a4                irq_init_priorities
  .text.lock_init
-                0x10000888       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
-                0x10000888                lock_init
+                0x100009c0       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+                0x100009c0                lock_init
  .text.mutex_init
-                0x10000898       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
-                0x10000898                mutex_init
+                0x100009d0       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+                0x100009d0                mutex_init
  .text.recursive_mutex_init
-                0x100008b2       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
-                0x100008b2                recursive_mutex_init
+                0x100009ea       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+                0x100009ea                recursive_mutex_init
  .text.time_reached
-                0x100008d0       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000a08       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.get_entry
-                0x100008f8       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000a30       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.timer_pool_entry_comparator
-                0x10000930       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10000930                timer_pool_entry_comparator
- *fill*         0x1000095e        0x2 
+                0x10000a68       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000a68                timer_pool_entry_comparator
+ *fill*         0x10000a96        0x2 
  .text.update_us_since_boot
-                0x10000960       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000a98       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.delayed_by_us
-                0x10000984       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000abc       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.ph_get_node
-                0x100009b8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000af0       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.ph_contains_node
-                0x100009e8       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000b20       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.ph_new_node
-                0x10000a06       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10000a2e        0x2 
+                0x10000b3e       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10000b66        0x2 
  .text.ph_add_child_node
-                0x10000a30       0x6c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000b68       0x6c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.ph_merge_nodes
-                0x10000a9c       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10000ada        0x2 
+                0x10000bd4       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10000c12        0x2 
  .text.ph_insert_node
-                0x10000adc       0x3c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000c14       0x3c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.ph_free_node
-                0x10000b18       0x5c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000c50       0x5c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.get_entry_id_high
-                0x10000b74       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000cac       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.alarm_pool_post_alloc_init
-                0x10000ba4       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000cdc       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.sleep_until_callback
-                0x10000be4       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000d1c       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.get_absolute_time
-                0x10000c14       0x22 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000d4c       0x22 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.make_timeout_time_us
-                0x10000c36       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10000c5a        0x2 
+                0x10000d6e       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10000d92        0x2 
  .text.add_alarm_under_lock
-                0x10000c5c       0x94 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000d94       0x94 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x10000cf0      0x210 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10000e28      0x210 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10000f00       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10000f00                alarm_pool_init_default
+                0x10001038       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001038                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x10000f40       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10000f40                alarm_pool_get_default
+                0x10001078       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001078                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x10000f6c      0x10e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10000f6c                alarm_pool_add_alarm_at
+                0x100010a4      0x10e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x100010a4                alarm_pool_add_alarm_at
  .text.add_alarm_at
-                0x1000107a       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x100011b2       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.alarm_pool_cancel_alarm
-                0x100010a8       0xa8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x100010a8                alarm_pool_cancel_alarm
+                0x100011e0       0xa8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x100011e0                alarm_pool_cancel_alarm
  .text.cancel_alarm
-                0x10001150       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001288       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .text.sleep_until
-                0x10001160       0xb0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10001160                sleep_until
+                0x10001298       0xb0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001298                sleep_until
  .text.sleep_us
-                0x10001210       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10001210                sleep_us
+                0x10001348       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001348                sleep_us
  .text.sleep_ms
-                0x1000122a       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x1000122a                sleep_ms
- *fill*         0x1000123e        0x2 
+                0x10001362       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001362                sleep_ms
+ *fill*         0x10001376        0x2 
  .text.best_effort_wfe_or_timeout
-                0x10001240       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x10001240                best_effort_wfe_or_timeout
+                0x10001378       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10001378                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10001284       0x8c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x100013bc       0x8c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001310       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001310                hardware_alarm_claim
+                0x10001448       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001448                hardware_alarm_claim
  .text.time_us_64
-                0x10001328       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001328                time_us_64
+                0x10001460       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001460                time_us_64
  .text.busy_wait_until
-                0x10001340       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001340                busy_wait_until
+                0x10001478       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001478                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x10001368       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001368                hardware_alarm_set_callback
+                0x100014a0       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x100014a0                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x100013f8       0xe8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
-                0x100013f8                hardware_alarm_set_target
+                0x10001530       0xe8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001530                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x100014e0       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
-                0x100014e0                hardware_alarm_cancel
+                0x10001618       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001618                hardware_alarm_cancel
  .text.ph_get_node
-                0x10001520       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10001658       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .text.ph_add_child_node
-                0x10001550       0x6c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10001688       0x6c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .text.ph_merge_nodes
-                0x100015bc       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x100016f4       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .text.ph_clear
-                0x100015fa       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
-                0x100015fa                ph_clear
+                0x10001732       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10001732                ph_clear
  .text.ph_post_alloc_init
-                0x1000162e        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
-                0x1000162e                ph_post_alloc_init
+                0x10001766        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10001766                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x1000163c       0x5c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
-                0x1000163c                ph_merge_two_pass
+                0x10001774       0x5c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10001774                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x10001698       0xc0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x100017d0       0xc0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x10001758       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
-                0x10001758                ph_remove_head
+                0x10001890       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10001890                ph_remove_head
  .text.ph_remove_and_free_node
-                0x1000176c       0xa0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
-                0x1000176c                ph_remove_and_free_node
+                0x100018a4       0xa0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x100018a4                ph_remove_and_free_node
  .text.clock_configure
-                0x1000180c      0x108 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x1000180c                clock_configure
+                0x10001944      0x108 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001944                clock_configure
  .text.clocks_init
-                0x10001914      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001914                clocks_init
+                0x10001a4c      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001a4c                clocks_init
  .text.clock_get_hz
-                0x10001a14        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001a14                clock_get_hz
+                0x10001b4c        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001b4c                clock_get_hz
  .text.pll_init
-                0x10001a20      0x120 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
-                0x10001a20                pll_init
+                0x10001b58      0x120 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+                0x10001b58                pll_init
  .text.watchdog_start_tick
-                0x10001b40       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10001b40                watchdog_start_tick
+                0x10001c78       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10001c78                watchdog_start_tick
  .text.xosc_init
-                0x10001b50       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10001b50                xosc_init
- .text._exit    0x10001b78        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001b78                _exit
- .text.exit     0x10001b7c        0x6 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001b7c                exit
- *fill*         0x10001b82        0x2 
+                0x10001c88       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x10001c88                xosc_init
+ .text._exit    0x10001cb0        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001cb0                _exit
+ .text.exit     0x10001cb4        0x6 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001cb4                exit
+ *fill*         0x10001cba        0x2 
  .text.__assert_func
-                0x10001b84       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001b84                __assert_func
+                0x10001cbc       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001cbc                __assert_func
  .text.runtime_init
-                0x10001bbc       0xf8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001bbc                runtime_init
- .text.panic    0x10001cb4       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001cb4                panic
+                0x10001cf4       0xf8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001cf4                runtime_init
+ .text.panic    0x10001dec       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001dec                panic
  .text._out_null
-                0x10001ce4        0x2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x10001e1c        0x2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x10001ce6        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .text._atoi    0x10001cf4       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x10001e1e        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .text._atoi    0x10001e2c       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x10001d18       0xae CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x10001e50       0xae CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x10001dc6      0x110 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x10001efe      0x110 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_long
-                0x10001ed6       0xbc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x1000200e       0xbc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_long_long
-                0x10001f92      0x10e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x100020a0      0x420 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x100024c0      0x354 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x100020ca      0x10e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x100021d8      0x420 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x100025f8      0x354 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10002814      0x668 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x1000294c      0x668 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x10002e7c       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
-                0x10002e7c                vfctprintf
- .text          0x10002e9c       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x10002fb4       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x10002fb4                vfctprintf
+ .text          0x10002fd4       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x10002eac       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10002eac                rom_func_lookup
+                0x10002fe4       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10002fe4                rom_func_lookup
  .text.rom_data_lookup
-                0x10002ebc       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10002ebc                rom_data_lookup
+                0x10002ff4       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10002ff4                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10002ecc       0x36 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10002ecc                rom_funcs_lookup
- *fill*         0x10002f02        0x2 
+                0x10003004       0x36 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003004                rom_funcs_lookup
+ *fill*         0x1000303a        0x2 
  .text.__wrap___aeabi_idiv
-                0x10002f04       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
-                0x10002f04                __wrap___aeabi_idivmod
-                0x10002f04                divmod_s32s32
-                0x10002f04                div_s32s32
-                0x10002f04                __wrap___aeabi_idiv
-                0x10002f0c                divmod_s32s32_unsafe
-                0x10002f38                divmod_s32s32_savestate
+                0x1000303c       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+                0x1000303c                __wrap___aeabi_idivmod
+                0x1000303c                divmod_s32s32
+                0x1000303c                div_s32s32
+                0x1000303c                __wrap___aeabi_idiv
+                0x10003044                divmod_s32s32_unsafe
+                0x10003070                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10002f54       0x4c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
-                0x10002f54                __wrap___aeabi_uidiv
-                0x10002f54                __wrap___aeabi_uidivmod
-                0x10002f54                div_u32u32
-                0x10002f54                divmod_u32u32
-                0x10002f5c                divmod_u32u32_unsafe
-                0x10002f84                divmod_u32u32_savestate
+                0x1000308c       0x4c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+                0x1000308c                __wrap___aeabi_uidiv
+                0x1000308c                __wrap___aeabi_uidivmod
+                0x1000308c                div_u32u32
+                0x1000308c                divmod_u32u32
+                0x10003094                divmod_u32u32_unsafe
+                0x100030bc                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x10002fa0      0x424 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
-                0x10002fa0                __wrap___aeabi_ldivmod
-                0x10002fa0                div_s64s64
-                0x10002fa0                divmod_s64s64
-                0x10002fd0                divmod_u64u64
-                0x10002fd0                div_u64u64
-                0x10002fd0                __wrap___aeabi_uldivmod
-                0x10002fe0                divmod_u64u64_savestate
-                0x10003000                divmod_s64s64_unsafe
-                0x10003088                divmod_u64u64_unsafe
+                0x100030d8      0x424 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+                0x100030d8                __wrap___aeabi_ldivmod
+                0x100030d8                div_s64s64
+                0x100030d8                divmod_s64s64
+                0x10003108                divmod_u64u64
+                0x10003108                div_u64u64
+                0x10003108                __wrap___aeabi_uldivmod
+                0x10003118                divmod_u64u64_savestate
+                0x10003138                divmod_s64s64_unsafe
+                0x100031c0                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x100033c4       0x80 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100033c4                __wrap___aeabi_drsub
-                0x100033ca                __wrap___aeabi_dsub
-                0x100033dc                __wrap___aeabi_dadd
-                0x100033ee                __wrap___aeabi_ddiv
-                0x1000342a                __wrap___aeabi_dmul
+                0x100034fc       0x80 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100034fc                __wrap___aeabi_drsub
+                0x10003502                __wrap___aeabi_dsub
+                0x10003514                __wrap___aeabi_dadd
+                0x10003526                __wrap___aeabi_ddiv
+                0x10003562                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10003444       0x6c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003444                __wrap___aeabi_cdrcmple
-                0x10003454                __wrap___aeabi_cdcmple
-                0x10003454                __wrap___aeabi_cdcmpeq
+                0x1000357c       0x6c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000357c                __wrap___aeabi_cdrcmple
+                0x1000358c                __wrap___aeabi_cdcmple
+                0x1000358c                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x100034b0        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100034b0                __wrap___aeabi_dcmplt
+                0x100035e8        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100035e8                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmple
-                0x100034bc       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100034bc                __wrap___aeabi_dcmple
+                0x100035f4       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100035f4                __wrap___aeabi_dcmple
  .text.__wrap___aeabi_dcmpge
-                0x100034cc       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100034cc                __wrap___aeabi_dcmpge
+                0x10003604       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003604                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x100034dc        0xa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100034dc                __wrap___aeabi_dcmpgt
+                0x10003614        0xa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003614                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x100034e6       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100034e6                __wrap___aeabi_dcmpun
- *fill*         0x10003502        0x2 
+                0x1000361e       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000361e                __wrap___aeabi_dcmpun
+ *fill*         0x1000363a        0x2 
  .text.__wrap___aeabi_i2d
-                0x10003504       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003504                __wrap___aeabi_ui2d
-                0x1000350c                __wrap___aeabi_i2d
+                0x1000363c       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000363c                __wrap___aeabi_ui2d
+                0x10003644                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x1000353c       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000353c                __wrap___aeabi_d2iz
-                0x1000353c                double2int_z
+                0x10003674       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003674                __wrap___aeabi_d2iz
+                0x10003674                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10003584       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003584                double2uint
-                0x10003584                __wrap___aeabi_d2uiz
+                0x100036bc       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100036bc                double2uint
+                0x100036bc                __wrap___aeabi_d2uiz
  .text.__aeabi_double_init
-                0x1000359c       0xcc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x1000359c                __aeabi_double_init
+                0x100036d4       0xcc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x100036d4                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10003668       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003668                double_table_shim_on_use_helper
+                0x100037a0       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100037a0                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x1000369c       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000369c                drsub_shim
-                0x100036a2                dsub_shim
+                0x100037d4       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100037d4                drsub_shim
+                0x100037da                dsub_shim
  .text.dadd_shim
-                0x100036ac      0x15c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100036ac                dadd_shim
+                0x100037e4      0x15c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100037e4                dadd_shim
  .text.dmul_shim
-                0x10003808      0x15c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003808                dmul_shim
+                0x10003940      0x15c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003940                dmul_shim
  .text.ddiv_shim
-                0x10003964      0x1b0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003964                ddiv_shim
+                0x10003a9c      0x1b0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003a9c                ddiv_shim
  .text.double2uint_shim
-                0x10003b14        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003b14                double2uint_shim
-                0x10003b16                double2ufix_shim
- *fill*         0x10003b22        0x2 
+                0x10003c4c        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003c4c                double2uint_shim
+                0x10003c4e                double2ufix_shim
+ *fill*         0x10003c5a        0x2 
  .text.double2uint64_shim
-                0x10003b24       0x70 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003b24                double2uint64_shim
-                0x10003b26                double2ufix64_shim
-                0x10003b46                d2fix_a
+                0x10003c5c       0x70 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003c5c                double2uint64_shim
+                0x10003c5e                double2ufix64_shim
+                0x10003c7e                d2fix_a
  .text.dunpacks
-                0x10003b94       0x3c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003b94                dunpacks
+                0x10003ccc       0x3c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003ccc                dunpacks
  .text.__aeabi_lmul
-                0x10003bd0       0x32 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x10003bd0                __wrap___aeabi_lmul
- *fill*         0x10003c02        0x2 
+                0x10003d08       0x32 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x10003d08                __wrap___aeabi_lmul
+ *fill*         0x10003d3a        0x2 
  .text.__aeabi_float_init
-                0x10003c04       0xfc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10003c04                __aeabi_float_init
+                0x10003d3c       0xfc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10003d3c                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10003d00       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x10003d00                float_table_shim_on_use_helper
- .text          0x10003d34       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10003d34                __aeabi_mem_init
- .text.memcpy   0x10003d44        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10003d44                __wrap___aeabi_memcpy
-                0x10003d44                __wrap_memcpy
+                0x10003e38       0x34 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10003e38                float_table_shim_on_use_helper
+ .text          0x10003e6c       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10003e6c                __aeabi_mem_init
+ .text.memcpy   0x10003e7c        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10003e7c                __wrap___aeabi_memcpy
+                0x10003e7c                __wrap_memcpy
  .text.stdio_out_chars_no_crlf
-                0x10003d50        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10003d5e        0x2 
+                0x10003e88        0xe CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x10003e96        0x2 
  .text.stdio_out_chars_crlf
-                0x10003d60       0x80 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10003e98       0x80 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_stack_buffer_flush
-                0x10003de0       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10003f18       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x10003e24       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10003f5c       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.update_us_since_boot
-                0x10003e44       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10003f7c       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.get_absolute_time
-                0x10003e68       0x22 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10003e8a        0x2 
+                0x10003fa0       0x22 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x10003fc2        0x2 
  .text.delayed_by_ms
-                0x10003e8c       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10003fc4       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.make_timeout_time_ms
-                0x10003ed0       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004008       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdout_serialize_begin
-                0x10003ef0       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10003ef0                stdout_serialize_begin
+                0x10004028       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004028                stdout_serialize_begin
  .text.stdout_serialize_end
-                0x10003f10       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10003f10                stdout_serialize_end
+                0x10004048       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004048                stdout_serialize_end
  .text.stdio_put_string
-                0x10003f20       0x98 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004058       0x98 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .text.__wrap_putchar
+                0x100040f0       0x1c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100040f0                __wrap_putchar
  .text.stdio_flush
-                0x10003fb8       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10003fb8                stdio_flush
+                0x1000410c       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000410c                stdio_flush
  .text.__wrap_puts
-                0x10003fd8       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10003fd8                __wrap_puts
- *fill*         0x10003ff6        0x2 
+                0x1000412c       0x1e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000412c                __wrap_puts
+ *fill*         0x1000414a        0x2 
  .text.__wrap_vprintf
-                0x10003ff8       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10003ff8                __wrap_vprintf
+                0x1000414c       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000414c                __wrap_vprintf
  .text.__wrap_printf
-                0x10004038       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004038                __wrap_printf
+                0x1000418c       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000418c                __wrap_printf
+ .text.stdio_init_all
+                0x100041a4        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100041a4                stdio_init_all
  .text.spi_set_baudrate
-                0x10004050       0xc2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
-                0x10004050                spi_set_baudrate
- *fill*         0x10004112        0x2 
+                0x100041a8       0xc2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x100041a8                spi_set_baudrate
+ *fill*         0x1000426a        0x2 
  .text.spi_init
-                0x10004114       0x74 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
-                0x10004114                spi_init
- .text.strlen   0x10004188       0x5c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
-                0x10004188                strlen
+                0x1000426c       0x74 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x1000426c                spi_init
+ .text.strlen   0x100042e0       0x5c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+                0x100042e0                strlen
  *(.fini)
- .fini          0x100041e4        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x100041e4                _fini
- .fini.__stub   0x100041e8       0x40 linker stubs
+ .fini          0x1000433c        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x1000433c                _fini
+ .fini.__stub   0x10004340       0x60 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2109,232 +2118,232 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10004228        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10004228                        . = ALIGN (0x4)
+ .eh_frame      0x100043a0        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x100043a0                        . = ALIGN (0x4)
 
-.glue_7         0x10004228        0x0
- .glue_7        0x10004228        0x0 linker stubs
+.glue_7         0x100043a0        0x0
+ .glue_7        0x100043a0        0x0 linker stubs
 
-.glue_7t        0x10004228        0x0
- .glue_7t       0x10004228        0x0 linker stubs
+.glue_7t        0x100043a0        0x0
+ .glue_7t       0x100043a0        0x0 linker stubs
 
-.vfp11_veneer   0x10004228        0x0
- .vfp11_veneer  0x10004228        0x0 linker stubs
+.vfp11_veneer   0x100043a0        0x0
+ .vfp11_veneer  0x100043a0        0x0 linker stubs
 
-.v4_bx          0x10004228        0x0
- .v4_bx         0x10004228        0x0 linker stubs
+.v4_bx          0x100043a0        0x0
+ .v4_bx         0x100043a0        0x0 linker stubs
 
-.iplt           0x10004228        0x0
- .iplt          0x10004228        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x100043a0        0x0
+ .iplt          0x100043a0        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10004228      0xe24
+.rodata         0x100043a0      0xe2c
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.main.str1.4
-                0x10004228      0x9b0 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
-                                  0xe (size before relaxing)
+                0x100043a0      0x9b8 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                                 0x16 (size before relaxing)
  .rodata.resolve_branch.str1.4
-                0x10004bd8       0x59 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10004d58       0x59 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.make_branch.str1.4
-                0x10004bd8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10004d58       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.insert_branch_and_link.str1.4
-                0x10004bd8       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10004d58       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.irq_set_exclusive_handler.str1.4
-                0x10004bd8       0x36 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10004d58       0x36 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.irq_remove_handler.str1.4
-                0x10004bd8       0x3a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10004d58       0x3a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.irq_add_tail_to_free_list.str1.4
-                0x10004bd8       0x3a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x10004d58       0x3a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.__func__.0
-                0x10004bd8       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10004bf2        0x2 
- .rodata.__func__.1
-                0x10004bf4       0x17 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10004c0b        0x1 
- .rodata.__func__.2
-                0x10004c0c       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10004c1f        0x1 
- .rodata.__func__.3
-                0x10004c20        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .rodata.__func__.4
-                0x10004c2c        0xf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10004c3b        0x1 
- .rodata.__func__.6
-                0x10004c3c       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .rodata.str1.4
-                0x10004c56       0x8d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- *fill*         0x10004c56        0x2 
- .rodata.__func__.1
-                0x10004c58        0xb CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- *fill*         0x10004c63        0x1 
- .rodata.__func__.3
-                0x10004c64       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .rodata.get_entry.str1.4
-                0x10004c7c       0x5f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.update_us_since_boot.str1.4
-                0x10004c7c       0x65 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.ph_get_node.str1.4
-                0x10004c7c       0x6a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.ph_add_child_node.str1.4
-                0x10004c7c       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.ph_insert_node.str1.4
-                0x10004c7c        0x3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.ph_free_node.str1.4
-                0x10004c7c       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.add_alarm_under_lock.str1.4
-                0x10004c7c       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.alarm_pool_alarm_callback.str1.4
-                0x10004c7c       0x60 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.alarm_pool_get_default.str1.4
-                0x10004c7c       0x21 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.alarm_pool_cancel_alarm.str1.4
-                0x10004c7c       0x27 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.sleep_until.str1.4
-                0x10004c7c       0x4d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.__func__.1
-                0x10004c7c       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.__func__.3
-                0x10004c94       0x17 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004cab        0x1 
- .rodata.__func__.4
-                0x10004cac       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004cbe        0x2 
- .rodata.__func__.5
-                0x10004cc0        0xd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004ccd        0x3 
- .rodata.__func__.6
-                0x10004cd0       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004ce2        0x2 
- .rodata.__func__.7
-                0x10004ce4        0xf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004cf3        0x1 
- .rodata.__func__.8
-                0x10004cf4        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.__func__.9
-                0x10004d00       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004d15        0x3 
- .rodata.__func__.10
-                0x10004d18       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004d2d        0x3 
- .rodata.__func__.11
-                0x10004d30       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x10004d4a        0x2 
- .rodata.__func__.12
-                0x10004d4c        0xa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .rodata.hardware_alarm_claim.str1.4
-                0x10004d56       0x22 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .rodata.hardware_alarm_set_target.str1.4
-                0x10004d56       0x69 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x10004d56        0x2 
- .rodata.__func__.0
-                0x10004d58       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .rodata.ph_get_node.str1.4
-                0x10004d72       0x6a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .rodata.ph_add_child_node.str1.4
-                0x10004d72       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .rodata.ph_remove_any_head.str1.4
-                0x10004d72       0xa4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .rodata.ph_remove_and_free_node.str1.4
-                0x10004d72       0x26 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10004d58       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  *fill*         0x10004d72        0x2 
- .rodata.__func__.0
-                0x10004d74       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .rodata.__func__.1
-                0x10004d8c       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x10004d74       0x17 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10004d8b        0x1 
+ .rodata.__func__.2
+                0x10004d8c       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  *fill*         0x10004d9f        0x1 
- .rodata.__func__.2
-                0x10004da0       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- *fill*         0x10004db2        0x2 
  .rodata.__func__.3
-                0x10004db4        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .rodata.clock_configure.str1.4
-                0x10004dc0       0x5b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .rodata.__func__.1
-                0x10004dc0       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .rodata.pll_init.str1.4
-                0x10004dd0      0x128 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .rodata.__func__.0
-                0x10004dd0        0x9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .rodata.__assert_func.str1.4
-                0x10004dd9       0x43 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .rodata.runtime_init.str1.4
-                0x10004dd9       0x65 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .rodata.panic.str1.4
-                0x10004dd9       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x10004dd9        0x3 
- .rodata.__func__.2
-                0x10004ddc        0xd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .rodata._ftoa.str1.4
-                0x10004de9       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10004de9        0x3 
- .rodata._vsnprintf
-                0x10004dec      0x19c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .rodata.pow10.0
-                0x10004f88       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .rodata.__aeabi_double_init.str1.4
-                0x10004fd8       0xa0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .rodata.__func__.0
-                0x10004fd8       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .rodata.__aeabi_float_init.str1.4
-                0x10004fec       0x82 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .rodata.__func__.0
-                0x10004fec       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004da0        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .rodata.__func__.4
+                0x10004dac        0xf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10004dbb        0x1 
+ .rodata.__func__.6
+                0x10004dbc       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.str1.4
-                0x10004fff       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- *fill*         0x10004fff        0x1 
- .rodata.__bi_81
-                0x10005000        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_75
-                0x1000500c        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_56
-                0x10005018        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_44
-                0x10005024        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.update_us_since_boot.str1.4
-                0x10005030       0x65 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .rodata.crlf_str.2
-                0x10005030        0x2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10005032        0x2 
+                0x10004dd6       0x8d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ *fill*         0x10004dd6        0x2 
+ .rodata.__func__.1
+                0x10004dd8        0xb CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ *fill*         0x10004de3        0x1 
  .rodata.__func__.3
-                0x10005034       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x1000504c                        . = ALIGN (0x4)
- *fill*         0x10005049        0x3 
+                0x10004de4       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .rodata.get_entry.str1.4
+                0x10004dfc       0x5f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.update_us_since_boot.str1.4
+                0x10004dfc       0x65 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.ph_get_node.str1.4
+                0x10004dfc       0x6a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.ph_add_child_node.str1.4
+                0x10004dfc       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.ph_insert_node.str1.4
+                0x10004dfc        0x3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.ph_free_node.str1.4
+                0x10004dfc       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.add_alarm_under_lock.str1.4
+                0x10004dfc       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.alarm_pool_alarm_callback.str1.4
+                0x10004dfc       0x60 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.alarm_pool_get_default.str1.4
+                0x10004dfc       0x21 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.alarm_pool_cancel_alarm.str1.4
+                0x10004dfc       0x27 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.sleep_until.str1.4
+                0x10004dfc       0x4d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.__func__.1
+                0x10004dfc       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.__func__.3
+                0x10004e14       0x17 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004e2b        0x1 
+ .rodata.__func__.4
+                0x10004e2c       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004e3e        0x2 
+ .rodata.__func__.5
+                0x10004e40        0xd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004e4d        0x3 
+ .rodata.__func__.6
+                0x10004e50       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004e62        0x2 
+ .rodata.__func__.7
+                0x10004e64        0xf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004e73        0x1 
+ .rodata.__func__.8
+                0x10004e74        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.__func__.9
+                0x10004e80       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004e95        0x3 
+ .rodata.__func__.10
+                0x10004e98       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004ead        0x3 
+ .rodata.__func__.11
+                0x10004eb0       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x10004eca        0x2 
+ .rodata.__func__.12
+                0x10004ecc        0xa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .rodata.hardware_alarm_claim.str1.4
+                0x10004ed6       0x22 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .rodata.hardware_alarm_set_target.str1.4
+                0x10004ed6       0x69 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x10004ed6        0x2 
+ .rodata.__func__.0
+                0x10004ed8       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .rodata.ph_get_node.str1.4
+                0x10004ef2       0x6a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .rodata.ph_add_child_node.str1.4
+                0x10004ef2       0x2e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .rodata.ph_remove_any_head.str1.4
+                0x10004ef2       0xa4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .rodata.ph_remove_and_free_node.str1.4
+                0x10004ef2       0x26 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ *fill*         0x10004ef2        0x2 
+ .rodata.__func__.0
+                0x10004ef4       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .rodata.__func__.1
+                0x10004f0c       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ *fill*         0x10004f1f        0x1 
+ .rodata.__func__.2
+                0x10004f20       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ *fill*         0x10004f32        0x2 
+ .rodata.__func__.3
+                0x10004f34        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .rodata.clock_configure.str1.4
+                0x10004f40       0x5b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .rodata.__func__.1
+                0x10004f40       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .rodata.pll_init.str1.4
+                0x10004f50      0x128 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .rodata.__func__.0
+                0x10004f50        0x9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .rodata.__assert_func.str1.4
+                0x10004f59       0x43 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .rodata.runtime_init.str1.4
+                0x10004f59       0x65 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .rodata.panic.str1.4
+                0x10004f59       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x10004f59        0x3 
+ .rodata.__func__.2
+                0x10004f5c        0xd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .rodata._ftoa.str1.4
+                0x10004f69       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10004f69        0x3 
+ .rodata._vsnprintf
+                0x10004f6c      0x19c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .rodata.pow10.0
+                0x10005108       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .rodata.__aeabi_double_init.str1.4
+                0x10005158       0xa0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .rodata.__func__.0
+                0x10005158       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .rodata.__aeabi_float_init.str1.4
+                0x1000516c       0x82 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .rodata.__func__.0
+                0x1000516c       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .rodata.str1.4
+                0x1000517f       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ *fill*         0x1000517f        0x1 
+ .rodata.__bi_81
+                0x10005180        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_75
+                0x1000518c        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_56
+                0x10005198        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_44
+                0x100051a4        0xc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.update_us_since_boot.str1.4
+                0x100051b0       0x65 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .rodata.crlf_str.2
+                0x100051b0        0x2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x100051b2        0x2 
+ .rodata.__func__.3
+                0x100051b4       0x15 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100051cc                        . = ALIGN (0x4)
+ *fill*         0x100051c9        0x3 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x1000504c                        . = ALIGN (0x4)
+                0x100051cc                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1000504c                        __exidx_start = .
+                0x100051cc                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1000504c                        __exidx_end = .
-                0x1000504c                        . = ALIGN (0x4)
-                0x1000504c                        __binary_info_start = .
+                0x100051cc                        __exidx_end = .
+                0x100051cc                        . = ALIGN (0x4)
+                0x100051cc                        __binary_info_start = .
 
-.binary_info    0x1000504c       0x20
+.binary_info    0x100051cc       0x20
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x1000504c        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051cc        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x10005050        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051d0        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr56
-                0x10005054        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051d4        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10005058        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051d8        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x1000505c        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051dc        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x10005060        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051e0        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x10005064        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051e4        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10005068        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100051e8        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
-                0x1000506c                        __binary_info_end = .
+                0x100051ec                        __binary_info_end = .
 
-.rel.dyn        0x1000506c        0x0
- .rel.iplt      0x1000506c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x1000506c                        . = ALIGN (0x4)
+.rel.dyn        0x100051ec        0x0
+ .rel.iplt      0x100051ec        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x100051ec                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -2343,7 +2352,7 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x20000000       0xc0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0x22c load address 0x1000506c
+.data           0x200000c0      0x2ac load address 0x100051ec
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -2360,146 +2369,152 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  .time_critical.mutex_exit
                 0x200001c8       0x4c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
                 0x200001c8                mutex_exit
+ .time_critical.spi_write_blocking
+                0x20000214       0x3a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x20000214                spi_write_blocking
+ .time_critical.spi_read_blocking
+                0x2000024e       0x3e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x2000024e                spi_read_blocking
  *(.text*)
- .text          0x20000214        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x20000214                __aeabi_ldiv0
-                0x20000214                __aeabi_idiv0
- .text.__stub   0x20000218       0x20 linker stubs
-                0x20000238                        . = ALIGN (0x4)
+ .text          0x2000028c        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x2000028c                __aeabi_ldiv0
+                0x2000028c                __aeabi_idiv0
+ .text.__stub   0x20000290       0x20 linker stubs
+                0x200002b0                        . = ALIGN (0x4)
  *(.rodata*)
-                0x20000238                        . = ALIGN (0x4)
+                0x200002b0                        . = ALIGN (0x4)
  *(.data*)
  .data.striped_spin_lock_num
-                0x20000238        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- *fill*         0x20000239        0x3 
- .data          0x2000023c       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-                0x2000023c                irq_handler_chain_slots
-                0x2000026c                irq_handler_chain_first_slot
-                0x20000276                irq_handler_chain_remove_tail
+                0x200002b0        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ *fill*         0x200002b1        0x3 
+ .data          0x200002b4       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+                0x200002b4                irq_handler_chain_slots
+                0x200002e4                irq_handler_chain_first_slot
+                0x200002ee                irq_handler_chain_remove_tail
  .data.default_alarm_pool
-                0x20000284       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x200002fc       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .data.default_alarm_pool_heap
-                0x2000029c       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- *fill*         0x200002ac        0x4 
+                0x20000314       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ *fill*         0x20000324        0xc 
  .data.aeabi_bits_funcs
-                0x200002b0       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-                0x200002b0                aeabi_bits_funcs
-                0x200002c0                aeabi_bits_funcs_end
+                0x20000330       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x20000330                aeabi_bits_funcs
+                0x20000340                aeabi_bits_funcs_end
  .data.aeabi_mem_funcs
-                0x200002c0       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x200002c0                aeabi_mem_funcs
-                0x200002d0                aeabi_mem_funcs_end
-                0x200002d0                        . = ALIGN (0x4)
+                0x20000340       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x20000340                aeabi_mem_funcs
+                0x20000350                aeabi_mem_funcs_end
+                0x20000350                        . = ALIGN (0x4)
  *(.after_data.*)
-                0x200002d0                        . = ALIGN (0x4)
-                0x200002d0                        PROVIDE (__mutex_array_start = .)
+                0x20000350                        . = ALIGN (0x4)
+                0x20000350                        PROVIDE (__mutex_array_start = .)
  *(SORT_BY_NAME(.mutex_array.*))
  *(.mutex_array)
- .mutex_array   0x200002d0        0x8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
-                0x200002d8                        PROVIDE (__mutex_array_end = .)
-                0x200002d8                        . = ALIGN (0x4)
-                0x200002d8                        PROVIDE (__preinit_array_start = .)
+ .mutex_array   0x20000350        0x8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20000358                        PROVIDE (__mutex_array_end = .)
+                0x20000358                        . = ALIGN (0x4)
+                0x20000358                        PROVIDE (__preinit_array_start = .)
  *(SORT_BY_NAME(.preinit_array.*))
  .preinit_array.00001
-                0x200002d8        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x20000358        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .preinit_array.00010
-                0x200002dc        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x2000035c        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .preinit_array.00020
-                0x200002e0        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x20000360        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
  .preinit_array.00020
-                0x200002e4        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x20000364        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
  *(.preinit_array)
-                0x200002e8                        PROVIDE (__preinit_array_end = .)
-                0x200002e8                        . = ALIGN (0x4)
-                0x200002e8                        PROVIDE (__init_array_start = .)
+                0x20000368                        PROVIDE (__preinit_array_end = .)
+                0x20000368                        . = ALIGN (0x4)
+                0x20000368                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x200002e8        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x200002ec                        PROVIDE (__init_array_end = .)
-                0x200002ec                        . = ALIGN (0x4)
+ .init_array    0x20000368        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x2000036c                        PROVIDE (__init_array_end = .)
+                0x2000036c                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
                 [!provide]                        PROVIDE (__fini_array_end = .)
  *(.jcr)
-                0x200002ec                        . = ALIGN (0x4)
-                0x200002ec                        __data_end__ = .
-                0x1000506c                        __etext = LOADADDR (.data)
+                0x2000036c                        . = ALIGN (0x4)
+                0x2000036c                        __data_end__ = .
+                0x100051ec                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x200002ec        0x0 load address 0x10005298
+                0x2000036c        0x0 load address 0x10005498
  .tm_clone_table
-                0x200002ec        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x2000036c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
-                0x200002ec        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+                0x2000036c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x200002ec        0x0 load address 0x10005298
- .igot.plt      0x200002ec        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.igot.plt       0x2000036c        0x0 load address 0x10005498
+ .igot.plt      0x2000036c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x200002ec        0x0 load address 0x10005298
-                0x200002ec                        . = ALIGN (0x4)
+                0x2000036c        0x0 load address 0x10005498
+                0x2000036c                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x10005298
+.scratch_x      0x20040000        0x0 load address 0x10005498
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10005298                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x10005498                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10005298
+.scratch_y      0x20041000        0x0 load address 0x10005498
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10005298                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x10005498                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x200002f0      0x3c4
-                0x200002f0                        . = ALIGN (0x4)
-                0x200002f0                        __bss_start__ = .
+.bss            0x20000370      0x3c4
+                0x20000370                        . = ALIGN (0x4)
+                0x20000370                        __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
  .bss.default_alarm_pool_entries
-                0x200002f0      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x20000370      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .bss.alarm_callbacks
-                0x200003f0       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x20000470       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .bss.configured_freq
-                0x20000400       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x20000480       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss.default_alarm_pool_entry_ids_high
-                0x20000428       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x200004a8       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x20000438       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .bss.drivers   0x20000468        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .bss.filter    0x2000046c        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .bss.object.0  0x20000470       0x18 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- .bss.pools     0x20000488       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .bss.sd_table  0x20000498      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20000498                sd_table
+                0x200004b8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .bss.drivers   0x200004e8        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .bss.filter    0x200004ec        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .bss.object.0  0x200004f0       0x18 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .bss.pools     0x20000508       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .bss.sd_table  0x20000518      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20000518                sd_table
  .bss.sf_clz_func
-                0x20000598        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20000598                sf_clz_func
- .bss.sf_table  0x2000059c      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x2000059c                sf_table
+                0x20000618        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20000618                sf_clz_func
+ .bss.sf_table  0x2000061c      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x2000061c                sf_table
  .bss.sleep_notifier
-                0x2000069c        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x2000071c        0x4 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .bss.target_hi
-                0x200006a0       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .bss.claimed   0x200006b0        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x20000720       0x10 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.claimed   0x20000730        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x200006b1        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x20000731        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .bss.timer_callbacks_pending
-                0x200006b2        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x20000732        0x1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  *(COMMON)
-                0x200006b4                        . = ALIGN (0x4)
- *fill*         0x200006b3        0x1 
-                0x200006b4                        __bss_end__ = .
+                0x20000734                        . = ALIGN (0x4)
+ *fill*         0x20000733        0x1 
+                0x20000734                        __bss_end__ = .
 
-.heap           0x200006b4      0x800
-                0x200006b4                        __end__ = .
-                0x200006b4                        end = __end__
+.heap           0x20000734      0x800
+                0x20000734                        __end__ = .
+                0x20000734                        end = __end__
  *(.heap*)
- .heap          0x200006b4      0x800 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x20000eb4                        __HeapLimit = .
+ .heap          0x20000734      0x800 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x20000f34                        __HeapLimit = .
 
 .stack1_dummy
  *(.stack1*)
@@ -2508,8 +2523,8 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10005298        0x0
-                0x10005298                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x10005498        0x0
+                0x10005498                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2564,7 +2579,7 @@ LOAD CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/p
 LOAD CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
 LOAD CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
 LOAD CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
-LOAD /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccV2sIiu.o
+LOAD /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccMmLO6R.o
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2655,7 +2670,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000566       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
  .ARM.attributes
-                0x00000592       0x22 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccV2sIiu.o
+                0x00000592       0x22 /var/folders/dt/771_f9hs13731x0fqnqc0nk80000gn/T//ccMmLO6R.o
  .ARM.attributes
                 0x000005b4       0x1e /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -2689,343 +2704,343 @@ LOAD linker stubs
  .comment       0x00000044       0x45 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .comment       0x00000044       0x45 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
-.debug_info     0x00000000    0x13e54
- .debug_info    0x00000000      0xa73 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
- .debug_info    0x00000a73     0x184b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_info    0x000022be      0x1fb CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
- .debug_info    0x000024b9      0x69a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
- .debug_info    0x00002b53      0x5fa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_info    0x0000314d     0x1c43 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_info    0x00004d90      0x1a3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
- .debug_info    0x00004f33     0x1d29 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .debug_info    0x00006c5c     0x33f9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .debug_info    0x0000a055     0x145b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_info    0x0000b4b0      0xe82 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .debug_info    0x0000c332      0xfe7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_info    0x0000d319      0x505 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_info    0x0000d81e      0x4d8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_info    0x0000dcf6      0x1c7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_info    0x0000debd      0xf23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_info    0x0000ede0     0x19db CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_info    0x000107bb       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_info    0x000107de      0x331 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_info    0x00010b0f       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
- .debug_info    0x00010b32       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_info    0x00010b55      0x33b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_info    0x00010e90       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_info    0x00010eb3       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_info    0x00010ed7       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_info    0x00010efa      0x34f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_info    0x00011249       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_info    0x0001126c       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_info    0x0001128f       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_info    0x000112b2      0x2e2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_info    0x00011594     0x172c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_info    0x00012cc0     0x1194 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+.debug_info     0x00000000    0x1472d
+ .debug_info    0x00000000     0x134c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+ .debug_info    0x0000134c     0x184b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_info    0x00002b97      0x1fb CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+ .debug_info    0x00002d92      0x69a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_info    0x0000342c      0x5fa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_info    0x00003a26     0x1c43 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_info    0x00005669      0x1a3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+ .debug_info    0x0000580c     0x1d29 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .debug_info    0x00007535     0x33f9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .debug_info    0x0000a92e     0x145b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_info    0x0000bd89      0xe82 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .debug_info    0x0000cc0b      0xfe7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_info    0x0000dbf2      0x505 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_info    0x0000e0f7      0x4d8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_info    0x0000e5cf      0x1c7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_info    0x0000e796      0xf23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_info    0x0000f6b9     0x19db CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_info    0x00011094       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_info    0x000110b7      0x331 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_info    0x000113e8       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+ .debug_info    0x0001140b       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_info    0x0001142e      0x33b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_info    0x00011769       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_info    0x0001178c       0x24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_info    0x000117b0       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_info    0x000117d3      0x34f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_info    0x00011b22       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_info    0x00011b45       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_info    0x00011b68       0x23 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_info    0x00011b8b      0x2e2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_info    0x00011e6d     0x172c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_info    0x00013599     0x1194 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
-.debug_abbrev   0x00000000     0x4199
- .debug_abbrev  0x00000000      0x29e CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
- .debug_abbrev  0x0000029e      0x3a6 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_abbrev  0x00000644       0xf8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
- .debug_abbrev  0x0000073c      0x2ce CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
- .debug_abbrev  0x00000a0a      0x249 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_abbrev  0x00000c53      0x500 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_abbrev  0x00001153      0x116 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
- .debug_abbrev  0x00001269      0x3f1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .debug_abbrev  0x0000165a      0x5c3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .debug_abbrev  0x00001c1d      0x3d5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_abbrev  0x00001ff2      0x290 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .debug_abbrev  0x00002282      0x434 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_abbrev  0x000026b6      0x1e7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_abbrev  0x0000289d      0x1a8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_abbrev  0x00002a45      0x10c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_abbrev  0x00002b51      0x530 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_abbrev  0x00003081      0x371 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_abbrev  0x000033f2       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_abbrev  0x00003404      0x167 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_abbrev  0x0000356b       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
- .debug_abbrev  0x0000357d       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_abbrev  0x0000358f      0x1c3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_abbrev  0x00003752       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_abbrev  0x00003764       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_abbrev  0x00003778       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_abbrev  0x0000378a      0x1c6 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_abbrev  0x00003950       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_abbrev  0x00003962       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_abbrev  0x00003974       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_abbrev  0x00003986       0xb8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_abbrev  0x00003a3e      0x478 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_abbrev  0x00003eb6      0x2e3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+.debug_abbrev   0x00000000     0x41e6
+ .debug_abbrev  0x00000000      0x2eb CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+ .debug_abbrev  0x000002eb      0x3a6 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_abbrev  0x00000691       0xf8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+ .debug_abbrev  0x00000789      0x2ce CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_abbrev  0x00000a57      0x249 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_abbrev  0x00000ca0      0x500 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_abbrev  0x000011a0      0x116 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+ .debug_abbrev  0x000012b6      0x3f1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .debug_abbrev  0x000016a7      0x5c3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .debug_abbrev  0x00001c6a      0x3d5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_abbrev  0x0000203f      0x290 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .debug_abbrev  0x000022cf      0x434 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_abbrev  0x00002703      0x1e7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_abbrev  0x000028ea      0x1a8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_abbrev  0x00002a92      0x10c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_abbrev  0x00002b9e      0x530 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_abbrev  0x000030ce      0x371 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_abbrev  0x0000343f       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_abbrev  0x00003451      0x167 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_abbrev  0x000035b8       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+ .debug_abbrev  0x000035ca       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_abbrev  0x000035dc      0x1c3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_abbrev  0x0000379f       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_abbrev  0x000037b1       0x14 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_abbrev  0x000037c5       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_abbrev  0x000037d7      0x1c6 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_abbrev  0x0000399d       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_abbrev  0x000039af       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_abbrev  0x000039c1       0x12 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_abbrev  0x000039d3       0xb8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_abbrev  0x00003a8b      0x478 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_abbrev  0x00003f03      0x2e3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
 .debug_loclists
-                0x00000000     0x83d4
+                0x00000000     0x8752
  .debug_loclists
-                0x00000000      0x1cf CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x00000000      0x54d CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .debug_loclists
-                0x000001cf      0xb61 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000054d      0xb61 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_loclists
-                0x00000d30       0xad CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+                0x000010ae       0xad CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
  .debug_loclists
-                0x00000ddd      0x2af CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000115b      0x2af CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
  .debug_loclists
-                0x0000108c      0x182 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000140a      0x182 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
  .debug_loclists
-                0x0000120e      0xdb7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000158c      0xdb7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .debug_loclists
-                0x00001fc5       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+                0x00002343       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
  .debug_loclists
-                0x00002015      0xa5b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+                0x00002393      0xa5b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
  .debug_loclists
-                0x00002a70     0x146a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x00002dee     0x146a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .debug_loclists
-                0x00003eda      0x698 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x00004258      0x698 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .debug_loclists
-                0x00004572      0x7aa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x000048f0      0x7aa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .debug_loclists
-                0x00004d1c      0x5c2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x0000509a      0x5c2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_loclists
-                0x000052de      0x214 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+                0x0000565c      0x214 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
  .debug_loclists
-                0x000054f2      0x1fd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x00005870      0x1fd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_loclists
-                0x000056ef       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x00005a6d       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_loclists
-                0x00005737      0x3d9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00005ab5      0x3d9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_loclists
-                0x00005b10     0x16f9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x00005e8e     0x16f9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .debug_loclists
-                0x00007209      0x14d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00007587      0x14d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_loclists
-                0x00007356       0x41 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x000076d4       0x41 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_loclists
-                0x00007397       0x4f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00007715       0x4f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_loclists
-                0x000073e6      0x8ad CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00007764      0x8ad CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_loclists
-                0x00007c93      0x741 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x00008011      0x741 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
-.debug_aranges  0x00000000      0xf38
+.debug_aranges  0x00000000      0xf58
  .debug_aranges
-                0x00000000       0x38 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x00000000       0x58 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .debug_aranges
-                0x00000038      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x00000058      0x100 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_aranges
-                0x00000138       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+                0x00000158       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
  .debug_aranges
-                0x00000160       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+                0x00000180       0x48 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
  .debug_aranges
-                0x000001a8       0x58 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x000001c8       0x58 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
  .debug_aranges
-                0x00000200       0xd0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000220       0xd0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .debug_aranges
-                0x000002d0       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+                0x000002f0       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
  .debug_aranges
-                0x000002f0       0xc0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+                0x00000310       0xc0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
  .debug_aranges
-                0x000003b0      0x158 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x000003d0      0x158 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .debug_aranges
-                0x00000508       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x00000528       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .debug_aranges
-                0x00000598       0x80 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x000005b8       0x80 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .debug_aranges
-                0x00000618       0x70 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00000638       0x70 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_aranges
-                0x00000688       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+                0x000006a8       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
  .debug_aranges
-                0x000006b0       0x58 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x000006d0       0x58 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_aranges
-                0x00000708       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x00000728       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_aranges
-                0x00000738       0x98 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000758       0x98 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_aranges
-                0x000007d0       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x000007f0       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .debug_aranges
-                0x00000860       0x68 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x00000880       0x68 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_aranges
-                0x000008c8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x000008e8       0x30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_aranges
-                0x000008f8       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+                0x00000918       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
  .debug_aranges
-                0x00000938      0x140 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x00000958      0x140 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
  .debug_aranges
-                0x00000a78       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x00000a98       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_aranges
-                0x00000a98       0xc8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x00000ab8       0xc8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
  .debug_aranges
-                0x00000b60       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x00000b80       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
  .debug_aranges
-                0x00000b80      0x130 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x00000ba0      0x130 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
  .debug_aranges
-                0x00000cb0       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00000cd0       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_aranges
-                0x00000cd0       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x00000cf0       0x50 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
  .debug_aranges
-                0x00000d20       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x00000d40       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .debug_aranges
-                0x00000d58       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x00000d78       0x28 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
  .debug_aranges
-                0x00000d80       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x00000da0       0x18 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .debug_aranges
-                0x00000d98      0x138 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000db8      0x138 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_aranges
-                0x00000ed0       0x68 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x00000ef0       0x68 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
 .debug_rnglists
-                0x00000000      0xd51
+                0x00000000      0xd84
  .debug_rnglists
-                0x00000000       0x25 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                0x00000000       0x58 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
  .debug_rnglists
-                0x00000025       0xec CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x00000058       0xec CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_rnglists
-                0x00000111       0x19 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+                0x00000144       0x19 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
  .debug_rnglists
-                0x0000012a       0x31 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000015d       0x31 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
  .debug_rnglists
-                0x0000015b       0x3d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000018e       0x3d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
  .debug_rnglists
-                0x00000198       0xf0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x000001cb       0xf0 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
  .debug_rnglists
-                0x00000288       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+                0x000002bb       0x13 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
  .debug_rnglists
-                0x0000029b       0xe7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+                0x000002ce       0xe7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
  .debug_rnglists
-                0x00000382      0x17a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x000003b5      0x17a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
  .debug_rnglists
-                0x000004fc       0x6a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000052f       0x6a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .debug_rnglists
-                0x00000566       0x8e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+                0x00000599       0x8e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
  .debug_rnglists
-                0x000005f4       0x51 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00000627       0x51 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_rnglists
-                0x00000645       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+                0x00000678       0x1a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
  .debug_rnglists
-                0x0000065f       0x3d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x00000692       0x3d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_rnglists
-                0x0000069c       0x1f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x000006cf       0x1f CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_rnglists
-                0x000006bb       0x7a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x000006ee       0x7a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_rnglists
-                0x00000735       0xe5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x00000768       0xe5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .debug_rnglists
-                0x0000081a       0x49 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x0000084d       0x49 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_rnglists
-                0x00000863       0x2b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00000896       0x2b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_rnglists
-                0x0000088e       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+                0x000008c1       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
  .debug_rnglists
-                0x000008ba       0xed CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x000008ed       0xed CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
  .debug_rnglists
-                0x000009a7       0x21 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x000009da       0x21 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_rnglists
-                0x000009c8       0x99 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x000009fb       0x99 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
  .debug_rnglists
-                0x00000a61       0xdf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x00000a94       0xdf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
  .debug_rnglists
-                0x00000b40       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00000b73       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_rnglists
-                0x00000b60       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x00000b93       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
  .debug_rnglists
-                0x00000b98       0x25 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x00000bcb       0x25 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .debug_rnglists
-                0x00000bbd       0x1b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x00000bf0       0x1b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
  .debug_rnglists
-                0x00000bd8      0x117 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000c0b      0x117 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_rnglists
-                0x00000cef       0x62 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+                0x00000d22       0x62 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
-.debug_line     0x00000000     0xe06b
- .debug_line    0x00000000      0x549 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
- .debug_line    0x00000549      0xc24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x0000116d      0x2a8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
- .debug_line    0x00001415      0x4ab CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
- .debug_line    0x000018c0      0x495 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x00001d55     0x1083 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x00002dd8      0x24c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x00003024     0x10f9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .debug_line    0x0000411d     0x19e8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .debug_line    0x00005b05      0xc26 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x0000672b      0x845 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .debug_line    0x00006f70      0xa30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x000079a0      0x526 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x00007ec6      0x472 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x00008338      0x2bf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x000085f7      0xb24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x0000911b     0x12dc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x0000a3f7      0x11a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_line    0x0000a511      0x28b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x0000a79c      0x2a9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
- .debug_line    0x0000aa45      0x3fa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_line    0x0000ae3f      0x3d8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_line    0x0000b217      0x66c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_line    0x0000b883       0x61 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_line    0x0000b8e4      0x3b2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_line    0x0000bc96      0x3cd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_line    0x0000c063      0x198 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_line    0x0000c1fb       0x94 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_line    0x0000c28f       0xa5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_line    0x0000c334      0x1e3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_line    0x0000c517      0xe97 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x0000d3ae      0xcbd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+.debug_line     0x00000000     0xe3dc
+ .debug_line    0x00000000      0x8ba CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+ .debug_line    0x000008ba      0xc24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x000014de      0x2a8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+ .debug_line    0x00001786      0x4ab CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_line    0x00001c31      0x495 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x000020c6     0x1083 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x00003149      0x24c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x00003395     0x10f9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x0000448e     0x19e8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .debug_line    0x00005e76      0xc26 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x00006a9c      0x845 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .debug_line    0x000072e1      0xa30 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x00007d11      0x526 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x00008237      0x472 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x000086a9      0x2bf CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x00008968      0xb24 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x0000948c     0x12dc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x0000a768      0x11a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_line    0x0000a882      0x28b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x0000ab0d      0x2a9 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+ .debug_line    0x0000adb6      0x3fa CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_line    0x0000b1b0      0x3d8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_line    0x0000b588      0x66c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_line    0x0000bbf4       0x61 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_line    0x0000bc55      0x3b2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_line    0x0000c007      0x3cd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_line    0x0000c3d4      0x198 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_line    0x0000c56c       0x94 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_line    0x0000c600       0xa5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_line    0x0000c6a5      0x1e3 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_line    0x0000c888      0xe97 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0000d71f      0xcbd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
-.debug_str      0x00000000     0x3722
- .debug_str     0x00000000     0x3722 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
-                                0x582 (size before relaxing)
- .debug_str     0x00003722      0xa0e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_str     0x00003722      0x235 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
- .debug_str     0x00003722      0x379 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
- .debug_str     0x00003722      0x360 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_str     0x00003722      0x82e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_str     0x00003722      0x216 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
- .debug_str     0x00003722      0x608 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .debug_str     0x00003722      0xc8b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .debug_str     0x00003722      0x740 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_str     0x00003722      0x406 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .debug_str     0x00003722      0x6dd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_str     0x00003722      0x2f1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_str     0x00003722      0x337 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_str     0x00003722      0x234 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_str     0x00003722      0x7f7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_str     0x00003722      0x495 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_str     0x00003722       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_str     0x00003722      0x28c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_str     0x00003722       0x8a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
- .debug_str     0x00003722       0x8e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_str     0x00003722      0x2d5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_str     0x00003722       0x94 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_str     0x00003722       0x99 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_str     0x00003722       0x8c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_str     0x00003722      0x2d1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_str     0x00003722       0x92 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_str     0x00003722       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_str     0x00003722       0x8d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_str     0x00003722      0x431 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_str     0x00003722      0x9d2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_str     0x00003722      0x5b2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+.debug_str      0x00000000     0x377d
+ .debug_str     0x00000000     0x377d CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+                                0x614 (size before relaxing)
+ .debug_str     0x0000377d      0xa0e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_str     0x0000377d      0x235 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+ .debug_str     0x0000377d      0x379 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_str     0x0000377d      0x360 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_str     0x0000377d      0x82e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_str     0x0000377d      0x216 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+ .debug_str     0x0000377d      0x608 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .debug_str     0x0000377d      0xc8b CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .debug_str     0x0000377d      0x740 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_str     0x0000377d      0x406 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .debug_str     0x0000377d      0x6dd CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_str     0x0000377d      0x2f1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_str     0x0000377d      0x337 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_str     0x0000377d      0x234 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_str     0x0000377d      0x7f7 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_str     0x0000377d      0x495 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_str     0x0000377d       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_str     0x0000377d      0x28c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_str     0x0000377d       0x8a CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+ .debug_str     0x0000377d       0x8e CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_str     0x0000377d      0x2d5 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_str     0x0000377d       0x94 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_str     0x0000377d       0x99 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_str     0x0000377d       0x8c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_str     0x0000377d      0x2d1 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_str     0x0000377d       0x92 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_str     0x0000377d       0x90 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_str     0x0000377d       0x8d CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_str     0x0000377d      0x431 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_str     0x0000377d      0x9d2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_str     0x0000377d      0x5b2 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
 
-.debug_frame    0x00000000     0x1c30
- .debug_frame   0x00000000       0x7c CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
- .debug_frame   0x0000007c      0x278 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_frame   0x000002f4       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
- .debug_frame   0x0000032c       0x9c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
- .debug_frame   0x000003c8       0xc8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_frame   0x00000490      0x228 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_frame   0x000006b8       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
- .debug_frame   0x000006d8      0x254 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .debug_frame   0x0000092c      0x464 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .debug_frame   0x00000d90      0x17c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_frame   0x00000f0c      0x198 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .debug_frame   0x000010a4      0x130 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_frame   0x000011d4       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_frame   0x00001218       0xa8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_frame   0x000012c0       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_frame   0x00001300      0x18c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_frame   0x0000148c      0x1fc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_frame   0x00001688       0x64 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_frame   0x000016ec       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_frame   0x00001718       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_frame   0x00001744      0x390 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_frame   0x00001ad4      0x134 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
- .debug_frame   0x00001c08       0x28 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+.debug_frame    0x00000000     0x1cb8
+ .debug_frame   0x00000000      0x104 CMakeFiles/pico_wireless.dir/pico_wireless.c.obj
+ .debug_frame   0x00000104      0x278 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_frame   0x0000037c       0x38 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+ .debug_frame   0x000003b4       0x9c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_frame   0x00000450       0xc8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_frame   0x00000518      0x228 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_frame   0x00000740       0x20 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+ .debug_frame   0x00000760      0x254 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .debug_frame   0x000009b4      0x464 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .debug_frame   0x00000e18      0x17c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_frame   0x00000f94      0x198 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .debug_frame   0x0000112c      0x130 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_frame   0x0000125c       0x44 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_frame   0x000012a0       0xa8 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_frame   0x00001348       0x40 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_frame   0x00001388      0x18c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_frame   0x00001514      0x1fc CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_frame   0x00001710       0x64 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_frame   0x00001774       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_frame   0x000017a0       0x2c CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_frame   0x000017cc      0x390 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_frame   0x00001b5c      0x134 CMakeFiles/pico_wireless.dir/Users/jin/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_spi/spi.c.obj
+ .debug_frame   0x00001c90       0x28 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
 
 .debug_line_str
                 0x00000000      0x339
