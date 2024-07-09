@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
+#include "hardware/uart.h"
+
+#include "pico_uart_debug.h"
 
 // SPI Defines
 // We are going to use SPI 0, and allocate it to the following GPIO pins
@@ -11,7 +14,6 @@
 #define NRF24L01_CSN_PIN 18
 #define PIN_MOSI 19
 #define NRF24L01_IRQ_PIN 20
-
 
 // Read register [000] + [5 bit register address]
 #define R_REGISTER = 0x00
@@ -130,26 +132,26 @@ void nrf24l01_config_rx_mode() {
 
 int main()
 {
-    /** Code for RX mode **/
+    pico_uart_debug_init();
+
+    while(1){
+        pico_uart_debug_led_on();
+        pico_uart_debug_printf("line\r\n");
+        pico_uart_debug_led_off();
+    }
+}
+
+/*
     stdio_init_all();
     nrf24l01_init();
     nrf24l01_config_rx_mode();
 
     uint8_t rx_data[32];
 
-    /** init LED for debugging **/
-    gpio_init(25);
-    gpio_set_dir(25, GPIO_OUT);
-
     while (true) {
         // Wait for IRQ pin to go low, indicating data is ready
         //if (!gpio_get(NRF24L01_IRQ_PIN)) {
         if (1) {
-
-            // first LED, saying starting to read
-            gpio_put(25, 1);
-            sleep_ms(2000);
-            gpio_put(25, 0);
 
             // Read the payload
             nrf24l01_read_payload(rx_data, 32);
@@ -170,12 +172,7 @@ int main()
             spi_write_blocking(spi0, &flush_cmd, 1);
             gpio_put(NRF24L01_CSN_PIN, 1);
 
-            // second LED, saying ending reading
-            gpio_put(25, 1);
-            sleep_ms(2000);
-            gpio_put(25, 0);
-            sleep_ms(1000);
         }
         sleep_ms(100);
     }
-}
+ */

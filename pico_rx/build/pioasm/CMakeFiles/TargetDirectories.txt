@@ -1,0 +1,3 @@
+/Users/jin/Desktop/my-ECU-wireless/pico_rx/build/pioasm/CMakeFiles/pioasm.dir
+/Users/jin/Desktop/my-ECU-wireless/pico_rx/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/jin/Desktop/my-ECU-wireless/pico_rx/build/pioasm/CMakeFiles/rebuild_cache.dir
